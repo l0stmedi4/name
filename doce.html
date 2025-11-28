@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>amor</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      color: black;
+      overflow-x: hidden;
+      background: white;
+    }
+
+    /* estrelas verdes iguais */
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #ffffff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 1.8s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.6); }
+    }
+
+    .container {
+      padding: 40px 20px;
+      animation: fade 1.4s ease;
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .text-box {
+      margin-top: 40px;
+      padding: 25px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 16px;
+      font-size: 18px;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(0,0,0,0.15);
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+      line-height: 1.6;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #ffffff;
+      color: rgb(0, 0, 0);
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #ffffff;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      .text-box {
+        width: 90%;
+        font-size: 16px;
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars"></div>
+
+  <script>
+    const sky = document.querySelector(".stars");
+    for (let i = 0; i < 40; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDelay = Math.random() + "s";
+      sky.appendChild(star);
+    }
+  </script>
+
+  <div class="container">
+
+    <div class="text-box">
+      eu queria te dizer uma coisa...
+      <br><br>
+      mas eu nao falaria com palavras.
+      entao fiz um site pra pode te falar do meu jeito.
+      <br><br>
+      pode parecer bobo,
+      e pode ta meio simples.
+      <br><br>
+     mas esse pequeno site e so mais um jeito de eu te mostrar oque eu penso.
+      <br><br>
+     aperte o botao abaixo e leia com carinho.
+      <br><br>
+
+      <a class="button" href="index.html">clique aqui</a>
+    </div>
+
+  </div>
+
+</body>
+<html/>
